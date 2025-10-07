@@ -1,7 +1,7 @@
 from __future__ import annotations
 import random
 import time
-from typing_extensions import override
+# from typing_extensions import override
 
 faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 suits = ["♠", "♥", "♣", "♦"]
@@ -29,7 +29,7 @@ class Card:
         else:
             return int(self.face)
 
-    @override
+    # @override
     def __str__(self) -> str:
         return f"{self.suit}{self.face}"
 
@@ -88,7 +88,7 @@ class Hand:
         return len(self.cards) == 2 and self.value == 21 and not self.is_split
 
     # Returns a list of cards in the hand
-    @override
+    # @override
     def __str__(self) -> str:
         return ", ".join(str(card) for card in self.cards)
 
