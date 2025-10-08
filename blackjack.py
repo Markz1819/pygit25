@@ -226,7 +226,6 @@ def resolve_blackjacks():
         time.sleep(0.2)
         print(f"[-{player_hands[0].bet} chips]")
 
-        # Fixed: Insurance pays 3x total (bet + 2x winnings)
         if insurance_bet != 0:
             player_chips += insurance_bet * 3
             print(f"Insurance pays! You win {insurance_bet * 2} chips from insurance!")
@@ -358,7 +357,6 @@ def can_split(hand: Hand) -> bool:
     if len(hand.cards) != 2 or player_chips < hand.bet:
         return False
 
-    # Fixed: Must have same face, not just same value
     return hand.cards[0].face == hand.cards[1].face
 
 
@@ -402,7 +400,6 @@ def split_hand(hand: Hand):
     print(f"Drawn: {new_hand.cards[-1]}")
     time.sleep(0.2)
 
-    # Fixed: If splitting Aces, only one card each (standard rule)
     if hand.cards[0].face == "A":
         hand.stood = True
         new_hand.stood = True
