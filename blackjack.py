@@ -547,7 +547,6 @@ def game_loop():
     offer_insurance()
     are_blackjacks = resolve_blackjacks()
     if not are_blackjacks:
-        # Fixed: Dealer plays if at least one hand is still alive
         if player_loop():
             dealer_loop()
 
